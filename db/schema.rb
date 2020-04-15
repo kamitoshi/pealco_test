@@ -10,10 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_04_13_055840) do
+ActiveRecord::Schema.define(version: 2020_04_13_035546) do
 
   create_table "alc_categories", force: :cascade do |t|
     t.string "name"
+    t.string "image"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -66,8 +67,10 @@ ActiveRecord::Schema.define(version: 2020_04_13_055840) do
     t.string "name"
     t.text "self_introduction"
     t.string "image"
+    t.integer "alc_category_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["alc_category_id"], name: "index_users_on_alc_category_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

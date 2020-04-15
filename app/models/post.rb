@@ -1,9 +1,9 @@
 class Post < ApplicationRecord
   belongs_to :user
+  belongs_to :alc_category
+  belongs_to :menu_category
   has_many :likes
   has_many :comments
-  has_one :alc_category
-  has_one :menu_category
 
   mount_uploader :image, ImageUploader
 end

@@ -1,10 +1,10 @@
-class PostUploader < CarrierWave::Uploader::Base
+class ImageUploader < CarrierWave::Uploader::Base
   # Include RMagick or MiniMagick support:
   # include CarrierWave::RMagick
-  # include CarrierWave::MiniMagick
+  include CarrierWave::MiniMagick
 
   # Choose what kind of storage to use for this uploader:
-  if Rails.env.production? || Rails.env.staging?
+  if Rails.env.production?
     storage :fog
   else
     storage :file
@@ -47,4 +47,13 @@ class PostUploader < CarrierWave::Uploader::Base
   def filename
     "something.jpg" if original_filename
   end
+
+  #サムネイルの為に画像をリサイズ
+  version :thumb do 
+    process resize_to_fit: [200, 200] 
+  end 
+  version :thumb50 do 
+    process resize_to_fill: [100, 100] 
+  end 
+
 end

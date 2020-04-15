@@ -1,0 +1,101 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+
+#container{
+  padding-top:40px;
+}
+
+/* background */
+.login-background{
+  width:100%;
+  height:100%;
+  position: fixed;
+  top:50px;
+  z-index:-10;
+  background-image:url("bg/main1.jpg");
+  background-size: cover;
+  opacity: 0.3;
+  padding-top:40px;
+}
+.unlogin-background{
+  width:100%;
+  height:100%;
+  position: fixed;
+  top:50px;
+  z-index:-10;
+  background-image:url("bg/top.jpg");
+  background-size: cover;
+  padding-top:40px;
+}
+
+
+/* universal */
+
+body{
+  padding-top: 50px;
+}
+section{
+  overflow:auto;
+}
+textarea{
+  resize: vertical;
+}
+.center{
+  text-align: center;
+}
+.center h1{
+  margin-bottom: 10px;
+}
+/* typography */
+
+h1,h2,h3,h4,h5,h6{
+  line-height: 1;
+}
+h1 {
+  font-size: 3em;
+  letter-spacing: -2px;
+  margin-bottom: 30px;
+  text-align: center;
+}
+h2 {
+  font-size: 1.2em;
+  letter-spacing: -1px;
+  margin-bottom: 30px;
+  text-align: center;
+  font-weight: normal;
+}
+p {
+  font-size: 1.1em;
+  line-height: 1.7em;
+}
+
+.alert {
+  position: fixed;
+  background-color: rgb(169, 244, 154);
+  top: 51px;
+  right: 0;
+  left: 0;
+  height: 40px;
+  text-align: center;
+  z-index: 1000;
+}
+
+.title{
+  padding-top:20px;
+  h1{
+    color:rgb(218, 212, 212);
+  }
+}
+
+/* form */
+.form-box{
+  width:90%;
+  margin:50px auto;
+  background-color: white;
+  opacity: 0.8;
+  border-radius: 10px;
+  padding:30px;
+  .field{
+    margin-bottom:20px;
+  }
+}

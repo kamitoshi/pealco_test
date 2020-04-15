@@ -1,2 +1,17 @@
-<h1>ユーザー詳細ページです</h1>
-<p>現在ログインしているのは <%= @user.name %> です</p>
+<div class="row">
+  <div class="col-md-5">
+    <div class="profile-image">
+      <img src="<%= @user.image.thumb %>" >
+    </div>
+  </div>
+  <div class="col-md-7">
+    <div class="profile-info">
+      <h1><%= @user.name %></h1>
+      
+      favorite : <%= @user.alc_category.name %><br>
+
+      自己紹介文<br>
+      <%= @user.self_introduction %><br>
+    </div>
+  </div>
+</div>

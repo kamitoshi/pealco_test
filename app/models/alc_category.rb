@@ -1,4 +1,6 @@
 class AlcCategory < ApplicationRecord
-  belongs_to :user
-  belongs_to :post
+  has_many :users, dependent: :destroy
+  has_many :posts, dependent: :destroy
+
+  mount_uploader :image, ImageUploader
 end

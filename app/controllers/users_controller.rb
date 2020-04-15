@@ -1,6 +1,7 @@
 class UsersController < ApplicationController
   def index
     @users = User.all
+    @user = User.find(current_user.id)
   end
 
   def show
@@ -12,10 +13,10 @@ class UsersController < ApplicationController
   end
 
   def update
-    user = User.find(params[:id])
-    if user.update(user_params)
+    @user = User.find(params[:id])
+    if @user.update(user_params)
       flash[:success] = "プロフィールを変更しました"
-      redirect_to user_url(user)
+      redirect_to @user
     else
       render "edit"
     end
@@ -30,7 +31,7 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :self_introduction, :image, :alc_category)
+    params.require(:user).permit(:name, :email, :self_introduction, :image, :alc_category_id)
   end
 
 end

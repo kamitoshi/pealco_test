@@ -35,6 +35,7 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.string :name
       t.text :self_introduction
       t.string :image
+      t.references :alc_category
       t.timestamps null: false
     end
 
