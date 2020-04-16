@@ -11,7 +11,7 @@
     <h1>ユーザー一覧</h1>
 
     <% @users.each do |user| %>
-      <div class="users">
+      <div class="index-box">
         <img src="<%= user.image.thumb50 %>">
         <%= user.name %>
       </div>

@@ -1,0 +1,42 @@
+<div class="row">
+  <div class="col-md-4">
+    <div class="category-box">
+      <% @alc_categories.each do |alc| %>
+        <div class="category-item">
+          <%= alc.name %>
+        </div>
+      <% end %>
+    </div>
+    <div class="mini-form">
+      <% provide(:button, "投稿") %>
+      <%= render "posts/post_form" %>
+    </div>
+  </div>
+  <div class="col-md-8">
+    <div class="index-box">
+      <% if @posts.any? %>
+        <% @posts.each do |post| %>
+          <div class="post-index">
+            <div class="post-image">
+              <div class="drink">
+                <img src="<%= post.alc_category.image.thumb50 %>"><br>
+                <p>『 <%= post.alc_category.name %> 』</p>
+              </div>
+              <p class="mult">×</p>
+              <div class="food">
+                <img src="<%= post.image.thumb50 %>"><br>
+                <p>『 <%= post.menu_name %> 』</p>
+              </div>
+            </div>
+            <div class="post-info">
+              <h2><%= link_to post.title, post_path(post) %></h2>
+              <%= post.alc_category.name %>
+            </div>
+          </div>
+        <% end %>
+      <% else %>
+        <p>まだ投稿がありません</p>
+      <% end %>
+    </div>
+  </div>
+</div>

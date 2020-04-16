@@ -14,7 +14,7 @@
   z-index:-10;
   background-image:url("bg/main1.jpg");
   background-size: cover;
-  opacity: 0.3;
+  opacity: 0.2;
   padding-top:40px;
 }
 .unlogin-background{
@@ -97,5 +97,27 @@ p {
   padding:30px;
   .field{
     margin-bottom:20px;
+  }
+}
+
+/* post */
+.post-index{
+  display:flex;
+  padding:20px 0;
+  border-top:solid 1px #eee;
+  border-bottom:solid 1px #eee;
+  .post-image{
+    display:flex;
+    .drink, .food{
+      text-align:center;
+      padding:0 10px;
+    }
+    .mult{
+      margin-top:30px;
+      font-size:20px;
+    }
+    p{
+      margin-bottom:0;
+    }
   }
 }

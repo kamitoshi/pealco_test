@@ -1,0 +1,35 @@
+<div class="form-box">
+      <%= form_for(@post) do |f| %>
+        <%= render 'layouts/error', object: @post %>
+        <div class="field">
+          <%= f.label :title, "タイトル" %>
+          <%= f.text_field :title, class: 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :menu_name, "メニューの名前" %>
+          <%= f.text_field :menu_name, class: 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :content, "紹介文" %>
+          <%= f.text_area :content, class: 'form-control' %>
+        </div>
+
+        <div class="field">
+          <%= f.label :image, "画像" %>
+          <%= f.file_field :image %>
+        </div>
+
+        <div class="field">
+          <%= f.label :alc_category_id, "お酒の種類" %>
+          <%= f.collection_select :alc_category_id, AlcCategory.all, :id, :name, include_blank: true %>
+        </div>
+
+        <div class="field　radio">
+          <%= f.collection_radio_buttons :menu_category_id, MenuCategory.all, :id, :name %>
+        </div>
+
+        <%= f.submit yield(:button), class: "btn btn-primary" %>
+      <% end %>
+    </div>
